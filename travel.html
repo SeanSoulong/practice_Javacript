@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./asset/style/travel.css" />
+    <style>
+      /* Add CSS for the selected state */
+      .selected {
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <img src="./asset/svg/Rectangle 13.svg" class="backround" />
+        <nav class="nav-container">
+          <div class="logo">
+            <img src="./asset/svg/logo 1.svg" alt="Logo" />
+          </div>
+          <div class="text-logo">
+            <p class="text">Toursara</p>
+          </div>
+        </nav>
+        <div class="select">
+          <p class="text-select">Select Travel Company</p>
+        </div>
+        <div class="fram-logo-company">
+          <form action="#" class="from-select">
+            <div class="container-travel">
+              <div class="logo-company">
+                <img src="./asset/svg/Graphic.svg" alt="Company Logo 1" />
+              </div>
+              <div class="rateing">
+                <div class="star">
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                </div>
+                <p class="about-company">TravelCompany1</p>
+                <p class="about-option">Travel option: car, bus</p>
+                <div class="select-company">
+                  <li class="select-btn">Select</li>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-travel">
+              <div class="logo-company">
+                <img src="./asset/svg/Graphic (1).svg" alt="Company Logo 2" />
+              </div>
+              <div class="rateing">
+                <div class="star">
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                </div>
+                <p class="about-company">TravelCompany2</p>
+                <p class="about-option">Travel option: car</p>
+                <div class="select-company">
+                  <li class="select-btn">Select</li>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-travel">
+              <div class="logo-company">
+                <img src="./asset/svg/Graphic (2).svg" alt="Company Logo 3" />
+              </div>
+              <div class="rateing">
+                <div class="star">
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                  <li><img src="./asset/svg/grade.svg" alt="Star" /></li>
+                </div>
+                <p class="about-company">TravelCompany3</p>
+                <p class="about-option">Travel option: car</p>
+                <div class="select-company">
+                  <li class="select-btn">Select</li>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      // Select all elements with the class 'select-company'
+      const buttons = document.querySelectorAll(".select-company");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const btn = button.querySelector(".select-btn");
+          // Toggle selected state
+          if (button.classList.contains("selected")) {
+            button.classList.remove("selected");
+            btn.textContent = "Select";
+          } else {
+            // Deselect all buttons
+            buttons.forEach((btn) => {
+              btn.classList.remove("selected");
+              btn.querySelector(".select-btn").textContent = "Select";
+            });
+
+            // Select the clicked button
+            button.classList.add("selected");
+            btn.textContent = "Selected";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
